@@ -3,7 +3,7 @@ def line(array)
     puts "The line is currently empty."
   else
     line_state = "The line is currently: "
-    array.map.with_index { |name, idx| line_state << "#{idx + 1}. #{name} "}
+    array.each_with_index { |name, idx| line_state << "#{idx + 1}. #{name} "}
     puts line_state.strip
   end
 end
