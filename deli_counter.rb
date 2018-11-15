@@ -1,12 +1,12 @@
-def line(array)
-  if array.empty?
-    puts "The line is currently empty."
-  else
-    line_state = "The line is currently: "
-    array.each_with_index { |name, idx| line_state << "#{idx + 1}. #{name} "}
-    puts line_state.strip
-  end
-end
+# def line(array)
+#   if array.empty?
+#     puts "The line is currently empty."
+#   else
+#     line_state = "The line is currently: "
+#     array.each_with_index { |name, idx| line_state << "#{idx + 1}. #{name} "}
+#     puts line_state.strip
+#   end
+# end
 
 def take_a_number(array, name)
   array.push(name)
@@ -19,5 +19,15 @@ def now_serving(array)
   else
     puts "Currently serving #{array[0]}."
     array.shift
+  end
+end
+
+def line(array)
+  if array.empty?
+    puts "The line is currently empty."
+  else
+    line_state = "The line is currently: "
+    line_state << array.map.with_index { |name, idx| "#{idx + 1}. #{name}"}.join(" ")
+    puts line_state
   end
 end
